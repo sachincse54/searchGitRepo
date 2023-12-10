@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: monospace;
+
+}
+
+
+.home_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(7deg, rgba(255, 255, 255, 1) 20%, rgba(213, 217, 240, 0.9837068616509104) 50%, rgba(255, 255, 255, 1) 80%);
+}
+form {
+  width: 70%;
+}
+footer div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #676767;
+}
+
+
+.repo_main {
+  padding: 100px 100px 50px 100px;
+  min-height: 100vh;
+}
+.user-info-card {
+  display: flex;
+  gap: 15px;
+  max-width: 100%;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 30px;
+  height: fit-content;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.user_profile-img img {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+
+.user_info-data {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user_info-data .f1r p {
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.user_info-data .s2r {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.user_info-data .t3r {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  background: #1a56db;
+  color: white;
+  border-radius: 7px;
+  padding: 8px 10px;
+}
+
+.user_info-data .f4r {
+  display: flex;
+  gap: 10px;
+}
+
+.user_info-data .f4r div {
+  display: flex;
+  gap: 5px;
+  font-size: 14px;
+  background: #1a56db;
+  color: white;
+  border-radius: 7px;
+  padding: 8px 10px;
+}
+
+.user_info-data .f4r div span {
+  margin-left: 5px;
+}
+
+
+.repo_list-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.repo_item {
+  display: grid;
+  gap: 2px;
+  padding: 15px;
+  border: 2px solid #1a56db;
+
+}
+
+.repo_item h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.repo_item p {
+  font-size: 13px;
+  color: #585858;
+}
+
+.repo_item .topics {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+
+}
+
+.topics::-webkit-scrollbar {
+  width: .10rem;
+  height: 4px;
+  background-color: transparent;
+  border-radius: .5rem;
+}
+
+.topics::-webkit-scrollbar-thumb {
+  background-color: #c8c6d2;
+  border-radius: .5rem;
+  height: 10px;
+}
+
+.topics::-webkit-scrollbar-thumb:hover {
+  background-color: #a19fad;
+}
+
+.repo_item span {
+  font-size: 12px;
+  background: lightslategray;
+  padding: 3px 5px;
+  color: #fff;
+  border-radius: 3px;
+  min-width: max-content;
+}
+
+.repo_item a {
+  display: flex;
+  gap: 3px;
+  font-size: 12px;
+  justify-content: right;
+  color: #1a56db;
+}
+
+/* Style for the icon */
+.repo_item i {
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transition: transform 400ms ease, opacity 0.2s linear !important;
+}
+
+.repo_item a:hover i {
+  opacity: 0;
+  transform: translate(10px) rotate(0deg);
+}
+
+
+#toast-container {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: end;
+  gap: 15px;
+}
+
+.toast {
+  background-color: white;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 6px -1px rgba(189, 170, 173, 1);
+  -moz-box-shadow: 0px 0px 6px -1px rgba(189, 170, 173, 1);
+  box-shadow: 0px 0px 6px -1px rgba(189, 170, 173, 1);
+  animation: toastAnimation 3s ease-in-out forwards;
+}
+
+@keyframes toastAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+}
+
+.toast .uil-confused {
+  padding: 3px 6px;
+  border-radius: 5px;
+  background: #fee1e1;
+  font-size: 18px;
+  color: red;
+}
+
+.toast p {
+  color: #ff0000ad;
+  font-size: 14px;
+}
+
+.toast .uil-times {
+  font-size: 14px;
+  color: black;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.paginBtn {
+  background: #1a56db;
+  border-radius: 4px;
+  display: flex;
+  gap: 3px;
+  color: white;
+  font-size: 14px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+
+::-webkit-scrollbar {
+  width: .60rem;
+  background-color: #e3e2e9;
+  /*background-color: transparent;*/
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c8c6d2;
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a19fad;
+}
+
+
+@media only screen and (max-width: 870px) {
+  form{
+    width: 95%;
+  }
+  .repo_main {
+    margin-top: 100px;
+    padding: 10px 10px;
+  }
+  .user-info-card {
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .repo_list-container {
+    grid-template-columns: repeat(1, 1fr);
+}
+.user_info-data .f4r{
+  flex-direction: column;
+  gap: 2px;
+}
+}
